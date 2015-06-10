@@ -1,11 +1,41 @@
-/app/bootstrap.php.cache
-/app/cache/*
-!app/cache/.gitkeep
-/app/config/parameters.yml
-/app/logs/*
-!app/logs/.gitkeep
-/app/phpunit.xml
+# Symfony directories
 /bin/
-/composer.phar
-/vendor/
+/vendor/*
+/app/cache/*
+/app/logs/*
 /web/bundles/
+/web/css/
+/web/js/
+/web/assets/vendor/
+/web/config.php
+
+# Configuration files
+app/config/parameters.yml
+
+# Editors generated files
+.project
+.settings
+.buildpath
+.idea
+nbproject
+
+# Other files & directories
+/app/bootstrap.php.cache
+/composer.phar
+.maintenance
+/build/
+*.bak
+*.orig
+/bower_components
+/node_modules
+/web/media/cache
+/web/builds/
+
+# Keep empty directories
+!/app/*/.gitkeep
+!/vendor/.gitkeep
+
+# OS generated files
+.DS_Store*
+Thumbs.db
+*~

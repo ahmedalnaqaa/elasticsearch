@@ -16,4 +16,13 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Route("/view")
+     * @Template()
+     */
+    public function viewAction()
+    {
+        return array();
+    }
 }

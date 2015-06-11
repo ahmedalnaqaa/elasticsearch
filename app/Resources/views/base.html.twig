@@ -3,7 +3,7 @@
 <head>
     <meta charset="{{ _charset }}"/>
 
-    <title>Blog</title>
+    <title>{% block title %}Blog {% endblock %}</title>
     <meta name="description"
           content="{% block meta_description %}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -30,7 +30,6 @@
 {% endblock %}
 
 <div class="container-fluid">
-{% block body %}
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 {% block categories %}
@@ -44,10 +43,10 @@
                 {% endblock %}
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-content">
-                <h1>Hello World</h1>
+                {% block body %}
+                {% endblock %}
             </div>
         </div>
-{% endblock %}
 </div>
 <!-- Javascript files -->
 {% block javascripts %}

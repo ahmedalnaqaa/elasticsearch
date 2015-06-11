@@ -1,0 +1,30 @@
+{
+  "name": "elasticsearch",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ahmedalnaqaa/elasticsearch",
+  "authors": [
+    "Ahmed Alnaqaa <ahmedalnaqaa@gmail.com>"
+  ],
+  "description": "Testing elasticsearch on Symfony2 framework",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "bootstrap-rtl": "v3.2.0-rc4",
+    "font-awesome": "~4.3.0",
+    "jquery": "~2.1.0",
+    "angularjs": "~1.2.0",
+    "blueimp-file-upload": "~9.8.0",
+    "leaflet": "~0.7.3",
+    "angular-leaflet-directive": "~0.7.8",
+    "leaflet-plugins": "~1.2.0",
+    "jquery-ui": "~1.11.2"
+  }
+}

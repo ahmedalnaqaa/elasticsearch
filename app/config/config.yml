@@ -93,3 +93,6 @@ doctrine_mongodb:
     document_managers:
         default:
             auto_mapping: true
+
+vich_uploader:
+    db_driver: mongodb # or orm or propel or phpcr

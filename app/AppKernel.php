@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Blog\Bundle\UserBundle\BlogUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

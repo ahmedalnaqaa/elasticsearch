@@ -1,5 +1,8 @@
 /* Admin Navbar (Top navbar) */
 .navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 333;
   background: @base-color;
   border-color: transparent;
   border-radius: 0px;
@@ -52,13 +55,17 @@
   background-color: lighten(@base-color, 5%);
 }
 
-@media (min-width: 768px) {
-  .main-content {
-    padding-right: 40px;
-    padding-left: 40px;
+.main-content{
+  margin-top: 50px;
+
+  @media (min-width: 768px) {
+      padding-right: 40px;
+      padding-left: 40px;
+  }
+
+  .page-header {
+    margin-top: 0;
   }
 }
-.main-content .page-header {
-  margin-top: 0;
-}
+
 

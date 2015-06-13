@@ -107,3 +107,6 @@ knp_paginator:
         
 vich_uploader:
     db_driver: mongodb # or orm or propel or phpcr
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

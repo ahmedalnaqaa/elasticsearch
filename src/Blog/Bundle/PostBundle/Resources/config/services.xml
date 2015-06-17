@@ -6,7 +6,7 @@
 
     <!--
     <services>
-        <service id="blog_main.example" class="Blog\Bundle\MainBundle\Example">
+        <service id="blog_post.example" class="Blog\Bundle\PostBundle\Example">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>

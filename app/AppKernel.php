@@ -16,13 +16,13 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Blog\Bundle\MainBundle\BlogMainBundle(),
             new Blog\Bundle\UserBundle\BlogUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new Blog\Bundle\PostBundle\BlogPostBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

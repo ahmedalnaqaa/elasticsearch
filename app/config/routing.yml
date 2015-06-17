@@ -1,5 +1,5 @@
-blog_main:
-    resource: "@BlogMainBundle/Controller/"
+blog_post:
+    resource: "@BlogPostBundle/Controller/"
     type:     annotation
     prefix:   /
 

@@ -10,7 +10,7 @@ use Blog\Bundle\PostBundle\Document\Post;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="blog_home")
      * @Template()
      */
     public function indexAction()

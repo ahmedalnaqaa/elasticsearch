@@ -7,10 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">My Blog</a>
+            <a class="navbar-brand" href="{{ path('blog_home') }}">My Blog</a>
         </div>
         <div class="collapse navbar-collapse">
             <ol class="nav navbar-nav navbar-right">
+                <li><a href="{{ path('admin_categories') }}">Categories</a></li>
                 <li><a href="#">Ahmed Alnaqaa</a></li>
                 <li><a href="#">Logout</a> </li>
             </ol>

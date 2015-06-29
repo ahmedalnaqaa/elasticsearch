@@ -15,6 +15,11 @@ class Post
     /** @ODM\String */
     private $title;
 
+    /**
+     * @ODM\ReferenceOne(targetDocument="Category", mappedBy="post")
+     */
+    private $category;
+
     /** @ODM\String */
     private $body;
 
@@ -108,5 +113,27 @@ class Post
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Set category
+     *
+     * @param Category $category
+     * @return self
+     */
+    public function setCategory(Category $category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return Category $category
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

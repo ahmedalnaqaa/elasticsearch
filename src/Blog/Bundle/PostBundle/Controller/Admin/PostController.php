@@ -1,40 +1,17 @@
 <?php
 
-namespace Blog\Bundle\PostBundle\Controller;
+namespace Blog\Bundle\PostBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Blog\Bundle\PostBundle\Document\Post;
 
+/**
+ * @Route("/admin/posts")
+ */
 class PostController extends Controller
 {
-    /**
-     * @Route("/", name="blog_home")
-     * @Template()
-     */
-    public function indexAction()
-    {
-//        $post = new Post();
-//        $post->setTitle('My First Blog Post');
-//        $post->setBody('MongoDB + Doctrine 2 ODM = awesomeness!');
-//
-//        $dm = $this->get('doctrine_mongodb')->getManager();
-//        $dm->persist($post);
-//        $dm->flush();
-
-        return array();
-    }
-
-    /**
-     * @Route("/view")
-     * @Template()
-     */
-    public function viewAction()
-    {
-        return array();
-    }
-
     /**
      * Add/Edit Post
      *
@@ -52,19 +29,19 @@ class PostController extends Controller
         $dm = $this->get('doctrine_mongodb')->getManager();
 
         if ($is_edit_mode) {
-            $category = $dm->find('BlogPostBundle:Category', $id);
-            if (!$category) {
+            $post = $dm->find('BlogPostBundle:Post', $id);
+            if (!$post) {
                 throw $this->createNotFoundException('The category does not exist');
             }
         } else {
-            $category = new Category();
+            $post = new Category();
         }
 
-        $form = $this->categoryForm($category, $request->get('_route'));
+        $form = $this->categoryForm($post, $request->get('_route'));
         $form->handleRequest($request);
 
         if ($request->isMethod('POST') && $form->isValid()) {
-            $dm->persist($category);
+            $dm->persist($post);
             $dm->flush();
             return $this->redirect($request->headers->get('referer'));
         }
@@ -72,5 +49,20 @@ class PostController extends Controller
         return array(
             'form' => $form->createView(),
         );
+    }
+
+    /**
+     * Create Category Form
+     *
+     * @param Category $category
+     * @param $action
+     * @return \Symfony\Component\Form\Form
+     */
+    public function categoryForm(Category $category, $action)
+    {
+        return $this->createForm(new CategoryType(), $category, array(
+            'action' => $this->generateUrl($action, array('id' => $category->getId())),
+            'method' => 'POST',
+        ));
     }
 }
